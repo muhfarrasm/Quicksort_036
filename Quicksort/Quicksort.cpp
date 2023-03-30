@@ -42,7 +42,7 @@ void swap(int x, int y)
 void q_sort(int low, int high){
 
 	int pivot, i, j;
-	if (low > high) 																// langkah 1 
+	if (low > high)																// langkah 1 
 		return;
 
 		//partition the list into two parts
@@ -103,4 +103,15 @@ void display() {
 	}
 	cout << "\n\nNumber of comparasions:  " << cmp_count<<endl;
 	cout << "\n\nNumber of data movements:  " << cmp_count << endl;
+}
+
+int main()
+{
+	input();
+	//sort the array using quick sort
+	q_sort(0, n - 1);
+	display();
+	system("Pause");
+
+	return 0;
 }

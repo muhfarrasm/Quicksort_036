@@ -39,10 +39,10 @@ void swap(int x, int y)
 	arr[y] = temp;
 }
 
-void q_sort(int low, int high)
-{
+void q_sort(int low, int high){
+
 	int pivot, i, j;
-	if (low > high) {																// langkah 1 
+	if (low > high) 																// langkah 1 
 		return;
 
 		//partition the list into two parts
@@ -85,9 +85,22 @@ void q_sort(int low, int high)
 		}
 		//sort the list on the left of pivot using quick sort
 		q_sort(low, j - 1);																// langkah 12
+
+		//sort the list on the right of pivot using quick sort
+		q_sort(j+ 1, high);																// langkah 13
+
+}
+
+void display() {
+	cout << "\n------------" << endl;
+	cout << "\nSorted Array" << endl;
+	cout << "\n------------" << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[1] << " ";
+
 	}
-
-	//sort the list on the right of pivot using quick sort
-	q_sort(j + 1, high);																// langkah 13
-
+	cout << "\n\nNumber of comparasions:  " << cmp_count<<endl;
+	cout << "\n\nNumber of data movements:  " << cmp_count << endl;
 }
